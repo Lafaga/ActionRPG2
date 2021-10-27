@@ -43,5 +43,18 @@ public class MotionClipSamplingPanel : MonoBehaviour
 
         samplingTimeline.minValue = 0f;
         samplingTimeline.maxValue = clip.length;
+        samplingTimeline.value = 0f;
+
+        AnimationEvent[] events = currentClip.events;
+        if (events != null)
+        {
+            Debug.Log("Clip:" + currentClip.name);
+            foreach(AnimationEvent ae in events)
+            {
+                Debug.Log("Time:" + ae.time);
+                Debug.Log("ID:" + ae.intParameter);
+                Debug.Log("Event:" + ae.functionName);
+            }
+        }
     }
 }
