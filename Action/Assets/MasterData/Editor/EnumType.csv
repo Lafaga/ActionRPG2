@@ -1,0 +1,5 @@
+// enum name が空または新たな名前が定義されればそれまでの Enum は終了,,
+enum name,name,value
+ItemUseType,FreeUse,1
+,AutoUse,2
+,SellOnly,3
