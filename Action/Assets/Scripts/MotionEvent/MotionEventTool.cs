@@ -16,11 +16,16 @@ public class MotionEventTool : MonoBehaviour
     [SerializeField]
     private MotionClipSamplingPanel samplingPanel = null;
 
+    [SerializeField]
+    private MotionEventPanel eventPanel = null;
+
     private GameObject samplingActor = null;
 
     private AnimationClip[] motionClips = null;
 
     private AnimationClip currentClip = null;
+
+    public float CurrentFrame { private set; get; } = 0f;
 
     void Start()
     {
@@ -38,7 +43,7 @@ public class MotionEventTool : MonoBehaviour
             return;
         }
 
-        foreach(AnimationClip motionClip in motionClips)
+        foreach (AnimationClip motionClip in motionClips)
         {
             GameObject newListItem = Instantiate(listItemTemplate.gameObject, motionListParent);
             MotionListItem mli = newListItem.GetComponent<MotionListItem>();
@@ -49,12 +54,14 @@ public class MotionEventTool : MonoBehaviour
                 currentClip = motionClip;
                 PlaySamplingAnim(0f);
                 samplingPanel.SetSamplingClip(currentClip);
+                eventPanel.Setup(motionClip, this);
             }
 
             mli.Setup(clipName, () => {
                 currentClip = motionClip;
                 PlaySamplingAnim(0f);
                 samplingPanel.SetSamplingClip(currentClip);
+                eventPanel.Setup(motionClip, this);
             });
         }
 
@@ -63,12 +70,18 @@ public class MotionEventTool : MonoBehaviour
 
     void PlaySamplingAnim(float targetFrame)
     {
-        if (currentClip != null) { return; }
+        if (currentClip == null) { return; }
+
         if (targetActorAnimator != null)
         {
             if (targetActorAnimator.enabled)
                 targetActorAnimator.enabled = false;
         }
+
         currentClip.SampleAnimation(samplingActor, targetFrame);
+
+        CurrentFrame = targetFrame;
     }
+
+
 }

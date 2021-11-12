@@ -23,7 +23,7 @@ public class MotionEventListItem : MonoBehaviour
 
     AnimationEvent animEventData = null;
 
-    private Action<AnimationEvent> onDeleteCallback = null;
+    private Action<AnimationEvent> onDeleteEvent = null;
 
     private enum EditState
     {
@@ -35,7 +35,7 @@ public class MotionEventListItem : MonoBehaviour
 
     private void Awake()
     {
-        editButton?.onClick.AddListener(OnEditButonClick);
+        editButton?.onClick.AddListener(OnEditButtonClick);
         deleteButton?.onClick.AddListener(OnDeleteButtonClick);
     }
 
@@ -44,7 +44,7 @@ public class MotionEventListItem : MonoBehaviour
         onDeleteEvent?.Invoke(animEventData);
     }
 
-    private void OnEditButonClick()
+    private void OnEditButtonClick()
     {
         if (currentEditState == EditState.Edit)
         {
@@ -53,7 +53,7 @@ public class MotionEventListItem : MonoBehaviour
             eventDataInput.gameObject.SetActive(true);
         }
         else
-        { 
+        {
             currentEditState = EditState.Edit;
             editButton.GetComponentInChildren<Text>().text = "ï“èW";
             eventDataInput.gameObject.SetActive(false);
@@ -70,6 +70,8 @@ public class MotionEventListItem : MonoBehaviour
         {
             animEventData = data;
         }
+
+        onDeleteEvent = onDeleteCallback;
 
         SetupDisplay();
     }
