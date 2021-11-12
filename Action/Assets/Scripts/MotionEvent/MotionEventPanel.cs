@@ -25,6 +25,8 @@ public class MotionEventPanel : MonoBehaviour
 
     private AnimationClip currentClip = null;
 
+    private List<AnimationEvent> clipEventList = new List<AnimationEvent>();
+
     public void Setup(AnimationClip clip)
     {
         currentClip = clip;
@@ -38,6 +40,9 @@ public class MotionEventPanel : MonoBehaviour
                 motionListItemScrollView.SetActive(false);
                 return;
             }
+
+            clipEventList.Clear();
+            clipEventList.AddRange(eventDatas);
 
             SetupMotionEventPanel(eventDatas);
         }
@@ -62,10 +67,21 @@ public class MotionEventPanel : MonoBehaviour
             var newListItem = Instantiate(listItemTemplate, motionEventItemParent);
             MotionEventListItem meli = newListItem.GetComponent<MotionEventListItem>();
             meli.IsClonedObject = true;
-            meli.Setup(eventData);
+            meli.Setup(eventData, OnMotionEventDeleted);
         }
 
         listItemTemplate.gameObject.SetActive(false);
         motionListItemScrollView.SetActive(true);
+    }
+
+    private void OnMotionEventDeleted(AnimationEvent animationEvent)
+    {
+        clipEventList.Remove(animationEvent);
+        SetupMotionEventPanel(clipEventList.ToArray());
+
+        if (clipEventList.Count == 0)
+        {
+            motionListItemScrollView.SetActive(false);
+        }
     }
 }

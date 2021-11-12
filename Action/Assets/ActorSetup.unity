@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731703, g: 0.13414727, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1204,6 +1204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFrame: {fileID: 74483533}
   eventData: {fileID: 429821666}
+  eventDataInput: {fileID: 1247545796}
   deleteButton: {fileID: 454960678}
   editButton: {fileID: 1976352921}
   IsClonedObject: 0
@@ -2580,7 +2581,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 131280551}
   m_HandleRect: {fileID: 131280550}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
