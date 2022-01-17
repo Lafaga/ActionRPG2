@@ -12,7 +12,7 @@ public class MotionEventManager : MonoBehaviour
         {
             if (Isnt == null)
             {
-                Isnt=nwe motionEventManager();
+                Isnt=new motionEventManager();
             }
 
             return Isnt;
