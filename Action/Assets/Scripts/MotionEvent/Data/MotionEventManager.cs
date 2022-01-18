@@ -2,35 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MotionEventManager : MonoBehaviour
+public class MotionEventManager
 {
     private static MotionEventManager inst = null;
-
-    public static MotionEventManager Isnt
+    public static MotionEventManager Inst
     {
         get
         {
-            if (Isnt == null)
+            if (inst == null)
             {
-                Isnt=new motionEventManager();
+                inst = new MotionEventManager();
             }
 
-            return Isnt;
+            return inst;
         }
     }
 
     private MotionEventManager() { }
 
-
-    public void Execute(string[] dataList)
+    public void Execute(string[] dataList) 
     {
         if (dataList == null) { return; }
 
         foreach(var eventId in dataList)
         {
-            unit targetEventId = OU;
+            uint targetEventId = 0U;
 
-            if(!unit.TryParse(eventId, out targetEventId))
+            if (!uint.TryParse(eventId, out targetEventId))
             {
                 Debug.LogError("Execution Fail Event ID:" + eventId);
                 continue;

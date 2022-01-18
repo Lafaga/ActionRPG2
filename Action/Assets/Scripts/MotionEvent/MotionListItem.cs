@@ -10,10 +10,9 @@ public class MotionListItem : MonoBehaviour
     [SerializeField]
     private Text motionNameLabel = null;
 
-    public void Setup(string motionName, Action onClick)
+    public void Setup(string motionName,Action onClick)
     {
-        listItemButton.onClick.AddListener(() => { onClick?.Invoke(); });
+        listItemButton.onClick.AddListener(()=> { onClick?.Invoke(); });
         motionNameLabel.text = motionName;
     }
 }
- 

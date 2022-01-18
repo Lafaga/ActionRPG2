@@ -11,6 +11,7 @@ public class MotionEventDispatcher : MonoBehaviour
             return;
         }
 
-        string[] dataList = motionEventData.Trim().Split('.');
+        string[] dataList = motionEventData.Trim().Split(',');
+        MotionEventManager.Inst.Execute(dataList);
     }
 }

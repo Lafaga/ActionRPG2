@@ -55,7 +55,7 @@ public class MotionEventPanel : MonoBehaviour
 
     private void OnCreateNewEventButtonClick()
     {
-        foreach (var checkEvent in clipEventList)
+        foreach(var checkEvent in clipEventList)
         {
             if (checkEvent.time == motionEventTool.CurrentFrame)
             {
@@ -98,7 +98,7 @@ public class MotionEventPanel : MonoBehaviour
     {
         if (motionEventItemParent != null)
         {
-            foreach (Transform child in motionEventItemParent)
+            foreach(Transform child in motionEventItemParent)
             {
                 if (child.GetComponent<MotionEventListItem>().IsClonedObject)
                 {
@@ -108,7 +108,7 @@ public class MotionEventPanel : MonoBehaviour
         }
 
         listItemTemplate.gameObject.SetActive(true);
-        foreach (var eventData in events)
+        foreach(var eventData in events)
         {
             var newListItem = Instantiate(listItemTemplate, motionEventItemParent);
             MotionEventListItem meli = newListItem.GetComponent<MotionEventListItem>();

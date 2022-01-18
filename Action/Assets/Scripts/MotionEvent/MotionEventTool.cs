@@ -37,13 +37,13 @@ public class MotionEventTool : MonoBehaviour
 
     void LoadAllMotion()
     {
-        if (motionClips == null)
+        if (motionClips == null) 
         {
             listItemTemplate.gameObject.SetActive(false);
             return;
         }
 
-        foreach (AnimationClip motionClip in motionClips)
+        foreach(AnimationClip motionClip in motionClips)
         {
             GameObject newListItem = Instantiate(listItemTemplate.gameObject, motionListParent);
             MotionListItem mli = newListItem.GetComponent<MotionListItem>();
@@ -71,7 +71,7 @@ public class MotionEventTool : MonoBehaviour
     void PlaySamplingAnim(float targetFrame)
     {
         if (currentClip == null) { return; }
-
+        
         if (targetActorAnimator != null)
         {
             if (targetActorAnimator.enabled)
@@ -83,5 +83,5 @@ public class MotionEventTool : MonoBehaviour
         CurrentFrame = targetFrame;
     }
 
-
+    
 }

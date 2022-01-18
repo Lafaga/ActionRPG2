@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Turn_Left
+  m_Name: turn_left
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -2319,7 +2319,8 @@ AnimationClip:
         time: 0.53333336
         value: {x: -0.042996228, y: 0.00000009364066, z: 0.0000000063241425, w: 0.99907523}
         inSlope: {x: 0.00000044703447, y: -0.0000033849226, z: -0.0000000339774, w: 0}
-        outSlope: {x: 0.00000044703447, y: -0.0000033849226, z: -0.0000000339774, w: 0}
+        outSlope: {x: 0.00000044703447, y: -0.0000033849226, z: -0.0000000339774,
+          w: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
@@ -2841,8 +2842,10 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.9333334
         value: {x: -0.06351229, y: 0.0000000671604, z: -0.0000000062551404, w: 0.9979811}
-        inSlope: {x: -0.00000044703447, y: -0.0000015326294, z: 0.000000068512605, w: 0}
-        outSlope: {x: -0.00000044703447, y: -0.0000015326294, z: 0.000000068512605, w: 0}
+        inSlope: {x: -0.00000044703447, y: -0.0000015326294, z: 0.000000068512605,
+          w: 0}
+        outSlope: {x: -0.00000044703447, y: -0.0000015326294, z: 0.000000068512605,
+          w: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}

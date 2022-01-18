@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Guard_Hit
+  m_Name: guard_hit
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -3012,7 +3012,8 @@ AnimationClip:
         time: 0.40000004
         value: {x: -0.0069599524, y: 0.08359808, z: -0.005688853, w: 0.996459}
         inSlope: {x: 0.00000046798988, y: -0.0000005587934, z: -0.0000008521598, w: 0}
-        outSlope: {x: 0.00000046798988, y: -0.0000005587934, z: -0.0000008521598, w: 0}
+        outSlope: {x: 0.00000046798988, y: -0.0000005587934, z: -0.0000008521598,
+          w: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
